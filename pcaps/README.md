@@ -34,3 +34,20 @@
 
 <h3>set3.pcap</h3>
 <h4>15. How many plaintext username-password pairs are the in this packet set? Please count any anonymous or generic accounts.</h4>
+<p>3 total: (user: seymore, password: butts), (user: nab01620@nifty.com, password: Nifty->takirin1), (user: jeff, password: asdasdasd)</p>
+<h4>16. For each of the plaintext username-password pair that you found, identify the protocol used, server IP, the corresponding domain name, and port number.</h4>
+<p>(user: seymore, password: butts, protocol: HTTP, server IP: 162.222.171.208, domain name: defcon.org, port #: 80)<br>
+(user: nab01620@nifty.com, password: Nifty->takirin1, protocol: IMAP, server IP: 210.131.4.155, domain name: nifty.com, port #: 143)<br>
+(user: jeff, password: asdasdasd, protocol: HTTP, server IP: 54.191.109.23, domain name: amazon.com, port #: 80)</p>
+<h4>17. Of all the plaintext username-password pairs that you found, how many of them are legitimate? That is, the username-password was valid, access successfully granted? Please do not count any anonymous or generic accounts.</h4>
+<p>1 legitimate username-password combination: (user: nab01620@nifty.com, password: Nifty->takirin1)</p>
+<h4>18. Provide a listing of all IP addresses with corresponding hosts (hostname + domain name) that are in this PCAP set. Describe your methodology.</h4>
+<p>I used the command: 'tshark -nr set3.pcap -Y "dns" -V'<br>
+to get the dns request/response data from the pcap file. I piped this outputto grep to get only lines referring to names or addresses, then piped that to dnsreduce.py (in this directory) to parse and reformat the ip/name data. The result is 473 ip/name pairs.<br>
+The full command is: tshark -nr set3.pcap -Y "dns" -V | grep -E "Name:|addr " | python dnsreduce.py > set3ipsandnames<br>
+The output file is in this directory, named set3ipsandnames.
+</p>
+
+
+<h4>Note: also found the following (legitimate) non-plaintext combination in set3.pcap</h4>
+<p>(user: greggammino, authkey: FD7167D85CB4FBDE7967433BA2B6C5E181BB3FF7, protocol: HTTP, server IP: 64.235.154.33, domain name: defcon23-badge-challenge.wikia.com, port #: 8080)</p>
