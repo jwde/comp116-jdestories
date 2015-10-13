@@ -1,4 +1,5 @@
 require 'packetfu'
+require 'pcaprub'
 require 'apachelogregex'
 
 $incidents = 0
@@ -64,6 +65,14 @@ def monitorLive()
     }
 end
 
+def analyzePcap(file)
+    pcap = Pcap.open_offline(file)
+    pcap.each do |packet|
+        pkt = PacketFu::Packet.parse(packet)
+        inspectPacket(pkt)
+    end
+end
+
 def analyzeLog(file)
     format = '%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"'
     parser = ApacheLogRegex.new(format)
@@ -97,6 +106,8 @@ if ARGV.length == 0
     monitorLive
 elsif ARGV.length == 2 and ARGV[0] == "-r"
     analyzeLog(ARGV[1])
+elsif ARGV.length == 2 and ARGV[0] == "-p"
+    analyzePcap(ARGV[1])
 else
     print "Usage: sudo ruby alarm.rb (-r <web server_log>)?\n"
 end

@@ -4,6 +4,7 @@
 <ul>
 <li>
 <h4>Analyzing a live stream of network packets</h4>
+<h5>Usage: sudo ruby alarm.rb</h5>
 <ul>
 <li>Detects NULL scan</li>
 <li>Detects FIN scan</li>
@@ -15,6 +16,7 @@
 </li>
 <li>
 <h4>Analyzing a web server log</h4>
+<h5>Usage: sudo ruby alarm.rb -r &lt;web server_log&gt;</h5>
 <ul>
 <li>Detects log entries with the string "Nmap" anywhere</li>
 <li>Detects log entries with the string "Nikto" anywhere</li>
@@ -23,6 +25,11 @@
 <li>Detects log entries with a request attempting to exploit the Shellshock vulnerability</li>
 <li>Detects log entries with a request containing shell code</li>
 </ul>
+</li>
+<li>
+<h4>Analyze a pcap file</h4>
+<h5>Usage: sudo ruby alarm.rb -p &lt;pcap file&gt;</h5>
+Performs same analysis as with a live stream of packets.
 </li>
 </ul>
 
