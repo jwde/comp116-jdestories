@@ -34,7 +34,7 @@ Actual time spent coding is about 90 minutes.<br>
 Time spent thinking about how to complete the assignment is higher and harder to measure.<br>
 
 <h3>Are the heuristics used in this assignment to determine incidents "even that good"?</h3>
-The heuristics used in this assignment will catch alot of incidents, but many will fall through the cracks. It is very difficult to come up with a comprehensive approach to this problem. We will undoubtedly also have a number of false positives where we are searching for patterns (e.g. credit card numbers) which appear in other contexts with different meaning.
+The heuristics used in this assignment will catch alot of incidents, but many will fall through the cracks. For example, searching for "Nmap" in the packet payload will only catch a small subset of Nmap scans. It is very difficult to come up with a comprehensive approach to this problem. We will undoubtedly also have a number of false positives where we are searching for patterns (e.g. credit card numbers) which appear in other contexts with different meaning.
 
 <h3>Given more time, what should be improved with regard to detecting incidents?</h3>
 Given more time, it would be useful to create a stateful incident alarm. If we knew what packets had arrived within some recent time window, it would be possible to detect scans/attacks that would otherwise be difficult to notice.
