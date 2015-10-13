@@ -34,7 +34,7 @@ Performs same analysis as with a live stream of packets.
 </ul>
 
 <h3>Collaboration</h3>
-I've talked with Brad Frizzell and Jared Bronen about the assignment at a high level. I've also talked with people by the couches in Halligan about implementing arbitrary nmap scan detection. 
+I've talked with Brad Frizzell and Jared Bronen about the assignment at a high level. I've also talked with various people in Halligan and after class about implementing arbitrary nmap scan detection. 
 
 <h3>Time spent</h3>
 Actual time spent coding is about 90 minutes.<br>
