@@ -31,7 +31,7 @@ I've talked with Brad Frizzell and Jared Bronen about the assignment at a high l
 
 <h3>Time spent</h3>
 Actual time spent coding is about 90 minutes.<br>
-Time spent thinking about how to complete the assignment is much higher and harder to measure.<br>
+Time spent thinking about how to complete the assignment is higher and harder to measure.<br>
 
 <h3>Are the heuristics used in this assignment to determine incidents "even that good"?</h3>
 The heuristics used in this assignment will catch alot of incidents, but many will fall through the cracks. It is very difficult to come up with a comprehensive approach to this problem. We will undoubtedly also have a number of false positives where we are searching for patterns (e.g. credit card numbers) which appear in other contexts with different meaning.
