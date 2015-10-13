@@ -29,11 +29,11 @@ def inspectPacket(packet)
     src = packet.ip_header.ip_src
 
 
-    if payload.scan(/\x4E\x6D\x61\x70/)
+    if payload.scan(/\x4E\x6D\x61\x70/) != []
         alertIncident("Nmap scan", src, packet.proto[-1], payload)
     end
 
-    if payload.scan(/\x4E\x69\x6B\x74\x6F/)
+    if payload.scan(/\x4E\x69\x6B\x74\x6F/) != []
         alertIncident("Nikto scan", src, packet.proto[-1], payload)
     end
 
